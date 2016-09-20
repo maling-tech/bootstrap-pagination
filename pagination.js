@@ -26,9 +26,10 @@
             tableDatas,
             formData = defaults.data;
 
-        ajaxGetData();
+        //通过ajax获取表格数据
+        getTableData();
 
-        function ajaxGetData() {
+        var getTableData = function() {
             var ajaxUrl = defaults.url + '?pageSize=' + pageSize + '&currentPage=' + currentPage;
             $.ajax({
                 url: ajaxUrl,
@@ -40,8 +41,8 @@
                     totalPage = Math.ceil(totalCount / pageSize);
                     currentPage = Number(result.currentPage);
                     tableDatas = result.data;
-                    createPageTag();
-                    defaults.callback(tableDatas);
+                    createPageTag();//创建分页标签
+                    defaults.callback(tableDatas);//通过后台获取的表格数据生成表格
                 }
             });
         }
