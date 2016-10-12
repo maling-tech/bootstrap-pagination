@@ -1,5 +1,5 @@
 #基于bootstrap的ajax分页插件
-
+```
 <script src="js/pagination.js"></script>
 <script type="text/javascript">
   $("#page").pagination({
@@ -14,4 +14,4 @@
     }
   })
 </script>
-
+```
